@@ -52,6 +52,8 @@ public class Prova1 {
         if (ped.getTotalPedido().equals(0.00)) {
             return 7;
         } else {
+            System.out.println("Valor em aberto de: "+ped.getTotalPedido().toString());
+            System.out.println("Pague o pedido aberto antes de encerrar");
             return 0;
         }
 
