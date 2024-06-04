@@ -1,5 +1,7 @@
 package projetoIntegrador.model.repository;
 
+import java.io.File;
+import java.io.FileWriter;
 import java.io.IOException;
 import java.io.Reader;
 import java.nio.file.Files;
@@ -10,11 +12,12 @@ import org.apache.commons.codec.binary.StringUtils;
 
 import com.opencsv.CSVReader;
 import com.opencsv.CSVReaderBuilder;
+import com.opencsv.CSVWriter;
 import com.opencsv.bean.OpencsvUtils;
 
 import projetoIntegrador.model.Cidade;
 
-public class LerCidade implements ILerArquivo {
+public class LerCidade implements IArquivo {
 
 	@Override
 	public ArrayList<Cidade> lerArquivo(String nomeArquivo) throws IOException {
@@ -73,6 +76,34 @@ public class LerCidade implements ILerArquivo {
 	private Double tratarDouble(String entrada) {
 		String saida = entrada.replace(".", "");
 		return Double.parseDouble(saida.replace(",", "."));
+	}
+
+	@Override
+	public Boolean escreverArquivo(ArrayList<Cidade> cidades) {
+		File file = new File("caminhoArquivo"); 
+	    try { 
+	        // create FileWriter object with file as parameter 
+	        FileWriter outputfile = new FileWriter(file); 
+	  
+	        // create CSVWriter object filewriter object as parameter 
+	        CSVWriter writer = new CSVWriter(outputfile); 
+	  
+	        // adding header to csv 
+	        String[] header = { "Name", "Class", "Marks" }; 
+	        writer.writeNext(header); 
+	  
+            for (Cidade city : cidades) {
+            	String [] linha = {city.getCodIBGE().toString() ,
+            			           city.getNomeCidade()};
+            	writer.writeNext(linha);
+            }
+	        writer.close(); 
+	    } 
+	    catch (IOException e) { 
+	        // TODO Auto-generated catch block 
+	        e.printStackTrace(); 
+	    } 
+		return true;
 	}
 
 }

@@ -5,8 +5,9 @@ import java.util.ArrayList;
 
 import projetoIntegrador.model.Cidade;
 
-public interface ILerArquivo {
+public interface IArquivo {
 	
 	public ArrayList<Cidade> lerArquivo(String nomeArquivo) throws IOException;
+	public Boolean escreverArquivo(ArrayList<Cidade> cidades);
 
 }
