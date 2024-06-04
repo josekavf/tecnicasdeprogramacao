@@ -7,7 +7,7 @@ import projetoIntegrador.model.Cidade;
 
 public interface IArquivo {
 	
-	public ArrayList<Cidade> lerArquivo(String nomeArquivo) throws IOException;
+	public ArrayList<Cidade> lerArquivo() throws IOException;
 	public Boolean escreverArquivo(ArrayList<Cidade> cidades);
 
 }
