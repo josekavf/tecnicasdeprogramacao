@@ -1,22 +1,26 @@
 package projetoIntegrador.model.repository;
 
+import java.io.BufferedReader;
 import java.io.File;
+import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.io.Reader;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.util.ArrayList;
+import java.util.List;
 
 import org.apache.commons.codec.binary.StringUtils;
 
+import com.opencsv.CSVParserBuilder;
 import com.opencsv.CSVReader;
 import com.opencsv.CSVReaderBuilder;
 import com.opencsv.CSVWriter;
 
 import projetoIntegrador.model.Cidade;
 
-public class CidadeRepotitory implements IArquivo {
+public class CidadeRepository implements IArquivo {
 
 	@Override
 	public ArrayList<Cidade> lerArquivo() throws IOException {
@@ -37,10 +41,21 @@ public class CidadeRepotitory implements IArquivo {
 		Double idhEduc = 0.0;
 		Double idhLong = 0.0;
 
-		Reader reader = Files.newBufferedReader(Paths.get("C:/Projeto Integrador/In/01.ProjetoIntegrador_BaseMunicipios_In.csv"));
-		CSVReader csvReader = new CSVReaderBuilder(reader).withSkipLines(1).build();
-
-		for (String[] s : csvReader.readAll()) {
+		//Reader reader = Files.newBufferedReader(Paths.get("C:/Projeto Integrador/In/01.ProjetoIntegrador_BaseMunicipios_In_.csv"));
+		//CSVReader csvReader = new CSVReaderBuilder(reader).withCSVParser(new CSVParserBuilder().withSeparator(';').build()).withSkipLines(1).build();
+		
+		
+		List<String[]> records = new ArrayList<>();
+		try (BufferedReader br = new BufferedReader(new FileReader("C:/Projeto Integrador/In/01.ProjetoIntegrador_BaseMunicipios_In_.csv"))) {
+		    String line;
+		    while ((line = br.readLine()) != null) {
+		        String[] values = line.split(";");
+		        records.add(values);
+		    }
+		}
+        Integer cont = 0;
+		for (String[] s : records) {
+			if (!cont.equals(0)) {
 			codIBGE = tratarInteiros(s[0]);
 			nomeCidade = StringUtils.newStringUtf8(s[1].getBytes()) ;
 			microRegiao = StringUtils.newStringUtf8(s[2].getBytes());
@@ -58,6 +73,8 @@ public class CidadeRepotitory implements IArquivo {
 			idhLong = tratarDouble(s[14]);
 			cidades.add(new Cidade(codIBGE, nomeCidade, microRegiao, UF, regiao, area, populacao, domicilios, pib,
 					idhGeral, rendaMedia, rendaNominal, peaDia, idhEduc, idhLong));
+			}
+			cont++;
 		}
 
 		return cidades;

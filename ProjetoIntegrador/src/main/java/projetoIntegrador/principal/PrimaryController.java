@@ -2,7 +2,7 @@ package projetoIntegrador.principal;
 
 
 import projetoIntegrador.model.Cidade;
-import projetoIntegrador.model.repository.CidadeRepotitory;
+import projetoIntegrador.model.repository.CidadeRepository;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -13,11 +13,11 @@ public class PrimaryController {
 
     @FXML
     private void switchToSecondary() throws IOException {
-    	/*ArrayList<Cidade> cidades = new CidadeRepository().lerArquivo("C:/Users/jose.vfelipe/Downloads/Teste.csv");
+    	ArrayList<Cidade> cidades = new CidadeRepository().lerArquivo();
     	for (Cidade city : cidades) {
     		System.out.println(city.toString());
     	}
-    	System.out.println(cidades.size());*/
+    	System.out.println(cidades.size());
         App.setRoot("secondary");
     }
 }

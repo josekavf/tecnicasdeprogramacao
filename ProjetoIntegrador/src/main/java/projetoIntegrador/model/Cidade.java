@@ -239,7 +239,7 @@ public class Cidade {
 	}
 	
 	public void setDtUltimaAlteracao() {
-		this.dtUltimaAlteracao = new SimpleDateFormat("yyyyMMdd_HHmmss").format(Calendar.getInstance().getTime());
+		this.dtUltimaAlteracao = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss").format(Calendar.getInstance().getTime());
 	}
 	
 	
