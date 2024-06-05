@@ -1,0 +1,8 @@
+projetoIntegrador\principal\PrimaryController.class
+projetoIntegrador\model\repository\CidadeRepository.class
+module-info.class
+projetoIntegrador\model\Cidade.class
+projetoIntegrador\model\repository\IArquivo.class
+projetoIntegrador\principal\App.class
+projetoIntegrador\principal\SecondaryController.class
+projetoIntegrador\model\ClassifcIDH.class
