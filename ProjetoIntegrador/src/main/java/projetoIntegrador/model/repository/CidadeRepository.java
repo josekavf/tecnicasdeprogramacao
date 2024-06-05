@@ -5,17 +5,10 @@ import java.io.File;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
-import java.io.Reader;
-import java.nio.file.Files;
-import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.List;
 
 import org.apache.commons.codec.binary.StringUtils;
-
-import com.opencsv.CSVParserBuilder;
-import com.opencsv.CSVReader;
-import com.opencsv.CSVReaderBuilder;
 import com.opencsv.CSVWriter;
 
 import projetoIntegrador.model.Cidade;
@@ -41,18 +34,14 @@ public class CidadeRepository implements IArquivo {
 		Double idhEduc = 0.0;
 		Double idhLong = 0.0;
 
-		//Reader reader = Files.newBufferedReader(Paths.get("C:/Projeto Integrador/In/01.ProjetoIntegrador_BaseMunicipios_In_.csv"));
-		//CSVReader csvReader = new CSVReaderBuilder(reader).withCSVParser(new CSVParserBuilder().withSeparator(';').build()).withSkipLines(1).build();
-		
-		
 		List<String[]> records = new ArrayList<>();
-		try (BufferedReader br = new BufferedReader(new FileReader("C:/Projeto Integrador/In/01.ProjetoIntegrador_BaseMunicipios_In_.csv"))) {
+		BufferedReader br = new BufferedReader(new FileReader("C:/Projeto Integrador/In/01.ProjetoIntegrador_BaseMunicipios_In.csv"));
 		    String line;
 		    while ((line = br.readLine()) != null) {
 		        String[] values = line.split(";");
 		        records.add(values);
 		    }
-		}
+		
         Integer cont = 0;
 		for (String[] s : records) {
 			if (!cont.equals(0)) {
@@ -76,7 +65,7 @@ public class CidadeRepository implements IArquivo {
 			}
 			cont++;
 		}
-
+        br.close();
 		return cidades;
 	}
 

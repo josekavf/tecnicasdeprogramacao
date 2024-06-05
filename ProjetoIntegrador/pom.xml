@@ -51,7 +51,7 @@
                         <!-- Usage: mvn clean javafx:run -->
                         <id>default-cli</id>
                         <configuration>
-                            <mainClass>projetoIntegrador.principal.App</mainClass>
+                            <mainClass>projetoIntegrador.view.App</mainClass>
                         </configuration>
                     </execution>
                 </executions>

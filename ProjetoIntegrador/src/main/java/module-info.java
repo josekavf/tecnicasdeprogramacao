@@ -4,6 +4,6 @@ module projetoIntegrador.principal {
 	requires org.apache.commons.codec;
 	requires opencsv;
 
-    opens projetoIntegrador.principal to javafx.fxml;
-    exports projetoIntegrador.principal;
+    opens projetoIntegrador.view to javafx.fxml;
+    exports projetoIntegrador.view;
 }
