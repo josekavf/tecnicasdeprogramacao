@@ -3,26 +3,49 @@ package projetoIntegrador.model;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 
+import javafx.beans.property.SimpleDoubleProperty;
+import javafx.beans.property.SimpleIntegerProperty;
+import javafx.beans.property.SimpleStringProperty;
+
 public class Cidade {
 	
 	public Cidade(Integer codIBGE, String nomeCidade, String microRegiao, String uF, String regiao, Double area,
 			Integer populacao, Integer domicilios, Double pib, Double idhGeral, Double rendaMedia, Double rendaNominal,
 			Integer peaDia, Double idhEduc, Double idhLong) {
-		this.codIBGE = codIBGE;
-		this.nomeCidade = nomeCidade;
-		this.microRegiao = microRegiao;
-		this.UF = uF;
-		this.regiao = regiao;
-		this.area = area;
-		this.populacao = populacao;
-		this.domicilios = domicilios;
-		this.pib = pib;
-		this.idhGeral = idhGeral;
-		this.rendaMedia = rendaMedia;
-		this.rendaNominal = rendaNominal;
-		this.peaDia = peaDia;
-		this.idhEduc = idhEduc;
-		this.idhLong = idhLong;
+		
+		
+		
+		this._codIBGE = codIBGE;
+		this._nomeCidade = nomeCidade;
+		this._microRegiao = microRegiao;
+		this._UF = uF;
+		this._regiao = regiao;
+		this._area = area;
+		this._populacao =  populacao;
+		this._domicilios = domicilios;
+		this._pib = pib;
+		this._idhGeral = idhGeral;
+		this._rendaMedia = rendaMedia;
+		this._rendaNominal = rendaNominal;
+		this._peaDia = peaDia;
+		this._idhEduc = idhEduc;
+		this._idhLong =  idhLong;
+		
+		this.codIBGE = new SimpleIntegerProperty(codIBGE);
+		this.nomeCidade = new SimpleStringProperty(nomeCidade);
+		this.microRegiao = new SimpleStringProperty(microRegiao);
+		this.UF = new SimpleStringProperty(uF);
+		this.regiao = new SimpleStringProperty(regiao);
+		this.area = new SimpleDoubleProperty(area);
+		this.populacao = new SimpleIntegerProperty(populacao);
+		this.domicilios = new SimpleIntegerProperty(domicilios);
+		this.pib = new SimpleDoubleProperty(pib);
+		this.idhGeral = new SimpleDoubleProperty(idhGeral);
+		this.rendaMedia = new SimpleDoubleProperty(rendaMedia);
+		this.rendaNominal = new SimpleDoubleProperty(rendaNominal);
+		this.peaDia = new SimpleIntegerProperty(peaDia);
+		this.idhEduc = new SimpleDoubleProperty(idhEduc);
+		this.idhLong = new SimpleDoubleProperty(idhLong);
 		this.setDtUltimaAlteracao();
 		this.setDensidadeDemografica();
 		this.setPibPerCapita();
@@ -32,112 +55,219 @@ public class Cidade {
 
 	}
 	
-	private Integer codIBGE;
-	private String nomeCidade;
-	private String microRegiao;
-	private String UF;
-	private String regiao;
-	private Double area;
-	private Integer populacao;
-	private Integer domicilios;
-	private Double pib;
-	private Double idhGeral;
-	private Double rendaMedia;
-	private Double rendaNominal;
-	private Integer peaDia;
-	private Double idhEduc;
-	private Double idhLong;
-
-	public Integer getCodIBGE() {
+	private  SimpleIntegerProperty codIBGE;
+	private SimpleStringProperty nomeCidade;
+	private  SimpleStringProperty microRegiao;
+	private  SimpleStringProperty UF;
+	private SimpleStringProperty regiao;
+	private SimpleDoubleProperty area;
+	private SimpleIntegerProperty populacao;
+	private SimpleIntegerProperty domicilios;
+	private SimpleDoubleProperty pib;
+	private SimpleDoubleProperty idhGeral;
+	private SimpleDoubleProperty rendaMedia;
+	private SimpleDoubleProperty rendaNominal;
+	private SimpleIntegerProperty peaDia;
+	private SimpleDoubleProperty idhEduc;
+	private SimpleDoubleProperty idhLong;
+	
+	
+	private Integer _codIBGE;
+	public SimpleIntegerProperty getCodIBGE() {
 		return codIBGE;
 	}
-	public void setCodIBGE(Integer codIBGE) {
+	public void setCodIBGE(SimpleIntegerProperty codIBGE) {
 		this.codIBGE = codIBGE;
 	}
 	public String getNomeCidade() {
-		return nomeCidade;
+		return nomeCidade.get();
 	}
-	public void setNomeCidade(String nomeCidade) {
+	/*public void setNomeCidade(SimpleStringProperty nomeCidade) {
 		this.nomeCidade = nomeCidade;
-	}
-	public String getMicroRegiao() {
+	}*/
+	public SimpleStringProperty getMicroRegiao() {
 		return microRegiao;
 	}
-	public void setMicroRegiao(String microRegiao) {
+	public void setMicroRegiao(SimpleStringProperty microRegiao) {
 		this.microRegiao = microRegiao;
 	}
-	public String getUF() {
+	public SimpleStringProperty getUF() {
 		return UF;
 	}
-	public void setUF(String uF) {
+	public void setUF(SimpleStringProperty uF) {
 		UF = uF;
 	}
-	public String getRegiao() {
+	public SimpleStringProperty getRegiao() {
 		return regiao;
 	}
-	public void setRegiao(String regiao) {
+	public void setRegiao(SimpleStringProperty regiao) {
 		this.regiao = regiao;
 	}
-	public Double getArea() {
+	public SimpleDoubleProperty getArea() {
 		return area;
 	}
-	public void setArea(Double area) {
+	public void setArea(SimpleDoubleProperty area) {
 		this.area = area;
 	}
-	public Integer getPopulacao() {
+	public SimpleIntegerProperty getPopulacao() {
 		return populacao;
 	}
-	public void setPopulacao(Integer populacao) {
+	public void setPopulacao(SimpleIntegerProperty populacao) {
 		this.populacao = populacao;
 	}
-	public Integer getDomicilios() {
+	public SimpleIntegerProperty getDomicilios() {
 		return domicilios;
 	}
-	public void setDomicilios(Integer domicilios) {
+	public void setDomicilios(SimpleIntegerProperty domicilios) {
 		this.domicilios = domicilios;
 	}
-	public Double getPib() {
+	public SimpleDoubleProperty getPib() {
 		return pib;
 	}
-	public void setPib(Double pib) {
+	public void setPib(SimpleDoubleProperty pib) {
 		this.pib = pib;
 	}
-	public Double getIdhGeral() {
+	public SimpleDoubleProperty getIdhGeral() {
 		return idhGeral;
 	}
-	public void setIdhGeral(Double idgGeral) {
-		this.idhGeral = idgGeral;
+	public void setIdhGeral(SimpleDoubleProperty idhGeral) {
+		this.idhGeral = idhGeral;
 	}
-	public Double getRendaMedia() {
+	public SimpleDoubleProperty getRendaMedia() {
 		return rendaMedia;
 	}
-	public void setRendaMedia(Double rendaMedia) {
+	public void setRendaMedia(SimpleDoubleProperty rendaMedia) {
 		this.rendaMedia = rendaMedia;
 	}
-	public Double getRendaNominal() {
+	public SimpleDoubleProperty getRendaNominal() {
 		return rendaNominal;
 	}
-	public void setRendaNominal(Double rendaNominal) {
+	public void setRendaNominal(SimpleDoubleProperty rendaNominal) {
 		this.rendaNominal = rendaNominal;
 	}
-	public Integer getPeaDia() {
+	public SimpleIntegerProperty getPeaDia() {
 		return peaDia;
 	}
-	public void setPeaDia(Integer peaDia) {
+	public void setPeaDia(SimpleIntegerProperty peaDia) {
 		this.peaDia = peaDia;
 	}
-	public Double getIdhEduc() {
+	public SimpleDoubleProperty getIdhEduc() {
 		return idhEduc;
 	}
-	public void setIdhEduc(Double idhEduc) {
+	public void setIdhEduc(SimpleDoubleProperty idhEduc) {
 		this.idhEduc = idhEduc;
 	}
-	public Double getIdhLong() {
+	public SimpleDoubleProperty getIdhLong() {
 		return idhLong;
 	}
-	public void setIdhLong(Double idhLong) {
+	public void setIdhLong(SimpleDoubleProperty idhLong) {
 		this.idhLong = idhLong;
 	}
+	public Integer get_codIBGE() {
+		return _codIBGE;
+	}
+	public void set_codIBGE(Integer _codIBGE) {
+		this._codIBGE = _codIBGE;
+	}
+	public String get_nomeCidade() {
+		return _nomeCidade;
+	}
+	public void set_nomeCidade(String _nomeCidade) {
+		this._nomeCidade = _nomeCidade;
+	}
+	public String get_microRegiao() {
+		return _microRegiao;
+	}
+	public void set_microRegiao(String _microRegiao) {
+		this._microRegiao = _microRegiao;
+	}
+	public String get_UF() {
+		return _UF;
+	}
+	public void set_UF(String _UF) {
+		this._UF = _UF;
+	}
+	public String get_regiao() {
+		return _regiao;
+	}
+	public void set_regiao(String _regiao) {
+		this._regiao = _regiao;
+	}
+	public Double get_area() {
+		return _area;
+	}
+	public void set_area(Double _area) {
+		this._area = _area;
+	}
+	public Integer get_populacao() {
+		return _populacao;
+	}
+	public void set_populacao(Integer _populacao) {
+		this._populacao = _populacao;
+	}
+	public Integer get_domicilios() {
+		return _domicilios;
+	}
+	public void set_domicilios(Integer _domicilios) {
+		this._domicilios = _domicilios;
+	}
+	public Double get_pib() {
+		return _pib;
+	}
+	public void set_pib(Double _pib) {
+		this._pib = _pib;
+	}
+	public Double get_idhGeral() {
+		return _idhGeral;
+	}
+	public void set_idhGeral(Double _idhGeral) {
+		this._idhGeral = _idhGeral;
+	}
+	public Double get_rendaMedia() {
+		return _rendaMedia;
+	}
+	public void set_rendaMedia(Double _rendaMedia) {
+		this._rendaMedia = _rendaMedia;
+	}
+	public Double get_rendaNominal() {
+		return _rendaNominal;
+	}
+	public void set_rendaNominal(Double _rendaNominal) {
+		this._rendaNominal = _rendaNominal;
+	}
+	public Integer get_peaDia() {
+		return _peaDia;
+	}
+	public void set_peaDia(Integer _peaDia) {
+		this._peaDia = _peaDia;
+	}
+	public Double get_idhEduc() {
+		return _idhEduc;
+	}
+	public void set_idhEduc(Double _idhEduc) {
+		this._idhEduc = _idhEduc;
+	}
+	public Double get_idhLong() {
+		return _idhLong;
+	}
+	public void set_idhLong(Double _idhLong) {
+		this._idhLong = _idhLong;
+	}
+
+	private String _nomeCidade;
+	private String _microRegiao;
+	private String _UF;
+	private String _regiao;
+	private Double _area;
+	private Integer _populacao;
+	private Integer _domicilios;
+	private Double _pib;
+	private Double _idhGeral;
+	private Double _rendaMedia;
+	private Double _rendaNominal;
+	private Integer _peaDia;
+	private Double _idhEduc;
+	private Double _idhLong;
 	
 	//Campos Calculados
 	private Double pibPerCapita;
@@ -152,11 +282,11 @@ public class Cidade {
 		return densidadeDemografica;
 	}
 	public void setDensidadeDemografica() {
-		if (this.area.equals(0.0)) {
-			this.densidadeDemografica = (Double) (this.populacao/1.0);
+		if (this._area.equals(0.0)) {
+			this.densidadeDemografica = (Double) (this._populacao/1.0);
 		}
 		else {
-		this.densidadeDemografica = (Double) (this.populacao/this.area);
+		this.densidadeDemografica = (Double) (this._populacao/this._area);
 		}
 	}
 	
@@ -165,10 +295,10 @@ public class Cidade {
 	}
 	
 	public void setPibPerCapita() {
-		if (this.populacao.equals(0)) {
-			this.pibPerCapita = (Double) (this.pib/1.0);
+		if (this._populacao.equals(0)) {
+			this.pibPerCapita = (Double) (this._pib/1.0);
 		}else {
-			this.pibPerCapita = (Double) (this.pib/this.populacao);
+			this.pibPerCapita = (Double) (this._pib/this._populacao);
 		}
 		
 	}
@@ -178,11 +308,11 @@ public class Cidade {
 	}
 	
 	public void setClassific_idhGeral() {
-		if (this.idhGeral < 0.55) {
+		if (this._idhGeral < 0.55) {
 			this.classific_idhGeral = ClassifcIDH.BAIXO;
-		}else if ( this.idhGeral <= 0.70) {
+		}else if ( this._idhGeral <= 0.70) {
 			this.classific_idhGeral = ClassifcIDH.MEDIO;
-		} else if (this.idhGeral <= 0.80) {
+		} else if (this._idhGeral <= 0.80) {
 			this.classific_idhGeral = ClassifcIDH.ALTO;
 		} else {
 			this.classific_idhGeral = ClassifcIDH.MUITO_ALTO;
@@ -194,11 +324,11 @@ public class Cidade {
 	}
 	
 	public void setClassific_idhEduc() {
-		if (this.idhEduc < 0.55) {
+		if (this._idhEduc < 0.55) {
 			this.classific_idhEduc = ClassifcIDH.BAIXO;
-		}else if ( this.idhEduc <= 0.70) {
+		}else if ( this._idhEduc <= 0.70) {
 			this.classific_idhEduc = ClassifcIDH.MEDIO;
-		} else if (this.idhEduc <= 0.80) {
+		} else if (this._idhEduc <= 0.80) {
 			this.classific_idhEduc = ClassifcIDH.ALTO;
 		} else {
 			this.classific_idhEduc = ClassifcIDH.MUITO_ALTO;
@@ -210,11 +340,11 @@ public class Cidade {
 	}
 	
 	public void setClassific_idhLong() {
-		if (this.idhLong < 0.55) {
+		if (this._idhLong < 0.55) {
 			this.classific_idhLong = ClassifcIDH.BAIXO;
-		}else if ( this.idhLong <= 0.70) {
+		}else if ( this._idhLong <= 0.70) {
 			this.classific_idhLong = ClassifcIDH.MEDIO;
-		} else if (this.idhLong <= 0.80) {
+		} else if (this._idhLong <= 0.80) {
 			this.classific_idhLong = ClassifcIDH.ALTO;
 		} else {
 			this.classific_idhLong = ClassifcIDH.MUITO_ALTO;
@@ -224,11 +354,11 @@ public class Cidade {
 
 	@Override
 	public String toString() {
-		return "Cidade [codIBGE=" + codIBGE + ", nomeCidade=" + nomeCidade + ", microRegiao=" + microRegiao + ", UF="
-				+ UF + ", regiao=" + regiao + ", area=" + area + ", populacao=" + populacao + ", domicilios="
-				+ domicilios + ", pib=" + pib + ", idhGeral=" + idhGeral + ", rendaMedia=" + rendaMedia
-				+ ", rendaNominal=" + rendaNominal + ", peaDia=" + peaDia + ", idhEduc=" + idhEduc + ", idhLong="
-				+ idhLong + ", densidadeDemografica=" + densidadeDemografica + ", pibPerCapita=" + pibPerCapita
+		return "Cidade [codIBGE=" + _codIBGE + ", nomeCidade=" + _nomeCidade + ", microRegiao=" + _microRegiao + ", UF="
+				+ _UF + ", regiao=" + _regiao + ", area=" + _area + ", populacao=" + _populacao + ", domicilios="
+				+ _domicilios + ", pib=" + _pib + ", idhGeral=" + _idhGeral + ", rendaMedia=" + _rendaMedia
+				+ ", rendaNominal=" + _rendaNominal + ", peaDia=" + _peaDia + ", idhEduc=" + _idhEduc + ", idhLong="
+				+ _idhLong + ", densidadeDemografica=" + densidadeDemografica + ", pibPerCapita=" + pibPerCapita
 				+ ", classific_idhGeral=" + classific_idhGeral + ", classific_idhEduc=" + classific_idhEduc
 				+ ", classific_idhLong=" + classific_idhLong + "]";
 	}
@@ -239,6 +369,7 @@ public class Cidade {
 	public void setDtUltimaAlteracao() {
 		this.dtUltimaAlteracao = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss").format(Calendar.getInstance().getTime());
 	}
+
 	
 	
 

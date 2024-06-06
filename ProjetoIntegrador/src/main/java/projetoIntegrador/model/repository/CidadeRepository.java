@@ -103,11 +103,11 @@ public class CidadeRepository implements IArquivo {
 			linhas.add(cabecalho);
 
 			for (Cidade city : cidades) {
-				String[] linha = { city.getCodIBGE().toString(), city.getNomeCidade(), city.getMicroRegiao(),
-						city.getUF(), city.getRegiao(), city.getArea().toString(), city.getPopulacao().toString(),
-						city.getDomicilios().toString(), city.getPib().toString(), city.getIdhGeral().toString(),
-						city.getRendaMedia().toString(), city.getRendaNominal().toString(), city.getPeaDia().toString(),
-						city.getIdhEduc().toString(), city.getIdhLong().toString(), city.getDtUltimaAlteracao()
+				String[] linha = { city.get_codIBGE().toString(), city.get_nomeCidade(), city.get_microRegiao(),
+						city.get_UF(), city.get_regiao(), city.get_area().toString(), city.get_populacao().toString(),
+						city.get_domicilios().toString(), city.get_pib().toString(), city.get_idhGeral().toString(),
+						city.get_rendaMedia().toString(), city.get_rendaNominal().toString(), city.get_peaDia().toString(),
+						city.get_idhEduc().toString(), city.get_idhLong().toString(), city.getDtUltimaAlteracao()
 
 				};
 				linhas.add(linha);

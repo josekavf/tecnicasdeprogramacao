@@ -1,8 +1,9 @@
-projetoIntegrador\principal\PrimaryController.class
-projetoIntegrador\model\repository\CidadeRepository.class
-module-info.class
+projetoIntegrador\controller\CidadeController.class
 projetoIntegrador\model\Cidade.class
 projetoIntegrador\model\repository\IArquivo.class
-projetoIntegrador\principal\App.class
-projetoIntegrador\principal\SecondaryController.class
 projetoIntegrador\model\ClassifcIDH.class
+projetoIntegrador\view\App.class
+projetoIntegrador\model\repository\CidadeRepository.class
+projetoIntegrador\view\PesquisaView.class
+module-info.class
+projetoIntegrador\view\LogInView.class
