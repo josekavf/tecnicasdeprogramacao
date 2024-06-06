@@ -2,7 +2,6 @@ package projetoIntegrador.model;
 
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
-import java.util.Date;
 
 public class Cidade {
 	
@@ -25,12 +24,11 @@ public class Cidade {
 		this.idhEduc = idhEduc;
 		this.idhLong = idhLong;
 		this.setDtUltimaAlteracao();
-		
-		setDensidadeDemografica();
-		setPibPerCapita();
-		setClassific_idhGeral();
-		setClassific_idhEduc();
-		setClassific_idhLong();
+		this.setDensidadeDemografica();
+		this.setPibPerCapita();
+		this.setClassific_idhGeral();
+		this.setClassific_idhEduc();
+		this.setClassific_idhLong();
 
 	}
 	
@@ -154,7 +152,7 @@ public class Cidade {
 		return densidadeDemografica;
 	}
 	public void setDensidadeDemografica() {
-		if (this.area.equals(0)) {
+		if (this.area.equals(0.0)) {
 			this.densidadeDemografica = (Double) (this.populacao/1.0);
 		}
 		else {

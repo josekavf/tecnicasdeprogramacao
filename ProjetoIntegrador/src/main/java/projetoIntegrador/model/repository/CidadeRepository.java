@@ -34,6 +34,7 @@ public class CidadeRepository implements IArquivo {
 		Double idhEduc = 0.0;
 		Double idhLong = 0.0;
 
+        
 		List<String[]> records = new ArrayList<>();
 		BufferedReader br = new BufferedReader(new FileReader("C:/Projeto Integrador/In/01.ProjetoIntegrador_BaseMunicipios_In.csv"));
 		    String line;
@@ -81,6 +82,10 @@ public class CidadeRepository implements IArquivo {
 		String saida = entrada.replace(".", "");
 		return Double.parseDouble(saida.replace(",", "."));
 	}
+	
+	public boolean existeArquivo() {
+		return new File("C:/Projeto Integrador/In/01.ProjetoIntegrador_BaseMunicipios_In.csv").exists();
+	}
 
 	@Override
 	public Boolean escreverArquivo(ArrayList<Cidade> cidades) {
@@ -117,5 +122,7 @@ public class CidadeRepository implements IArquivo {
 		}
 		return true;
 	}
+	
+	public CidadeRepository() {}
 
 }
