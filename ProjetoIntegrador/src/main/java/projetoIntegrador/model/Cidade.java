@@ -31,21 +31,7 @@ public class Cidade {
 		this._idhEduc = idhEduc;
 		this._idhLong =  idhLong;
 		
-		this.codIBGE = new SimpleIntegerProperty(codIBGE);
-		this.nomeCidade = new SimpleStringProperty(nomeCidade);
-		this.microRegiao = new SimpleStringProperty(microRegiao);
-		this.UF = new SimpleStringProperty(uF);
-		this.regiao = new SimpleStringProperty(regiao);
-		this.area = new SimpleDoubleProperty(area);
-		this.populacao = new SimpleIntegerProperty(populacao);
-		this.domicilios = new SimpleIntegerProperty(domicilios);
-		this.pib = new SimpleDoubleProperty(pib);
-		this.idhGeral = new SimpleDoubleProperty(idhGeral);
-		this.rendaMedia = new SimpleDoubleProperty(rendaMedia);
-		this.rendaNominal = new SimpleDoubleProperty(rendaNominal);
-		this.peaDia = new SimpleIntegerProperty(peaDia);
-		this.idhEduc = new SimpleDoubleProperty(idhEduc);
-		this.idhLong = new SimpleDoubleProperty(idhLong);
+
 		this.setDtUltimaAlteracao();
 		this.setDensidadeDemografica();
 		this.setPibPerCapita();
@@ -55,114 +41,11 @@ public class Cidade {
 
 	}
 	
-	private  SimpleIntegerProperty codIBGE;
-	private SimpleStringProperty nomeCidade;
-	private  SimpleStringProperty microRegiao;
-	private  SimpleStringProperty UF;
-	private SimpleStringProperty regiao;
-	private SimpleDoubleProperty area;
-	private SimpleIntegerProperty populacao;
-	private SimpleIntegerProperty domicilios;
-	private SimpleDoubleProperty pib;
-	private SimpleDoubleProperty idhGeral;
-	private SimpleDoubleProperty rendaMedia;
-	private SimpleDoubleProperty rendaNominal;
-	private SimpleIntegerProperty peaDia;
-	private SimpleDoubleProperty idhEduc;
-	private SimpleDoubleProperty idhLong;
+
 	
 	
-	private Integer _codIBGE;
-	public SimpleIntegerProperty getCodIBGE() {
-		return codIBGE;
-	}
-	public void setCodIBGE(SimpleIntegerProperty codIBGE) {
-		this.codIBGE = codIBGE;
-	}
-	public String getNomeCidade() {
-		return nomeCidade.get();
-	}
-	/*public void setNomeCidade(SimpleStringProperty nomeCidade) {
-		this.nomeCidade = nomeCidade;
-	}*/
-	public SimpleStringProperty getMicroRegiao() {
-		return microRegiao;
-	}
-	public void setMicroRegiao(SimpleStringProperty microRegiao) {
-		this.microRegiao = microRegiao;
-	}
-	public SimpleStringProperty getUF() {
-		return UF;
-	}
-	public void setUF(SimpleStringProperty uF) {
-		UF = uF;
-	}
-	public SimpleStringProperty getRegiao() {
-		return regiao;
-	}
-	public void setRegiao(SimpleStringProperty regiao) {
-		this.regiao = regiao;
-	}
-	public SimpleDoubleProperty getArea() {
-		return area;
-	}
-	public void setArea(SimpleDoubleProperty area) {
-		this.area = area;
-	}
-	public SimpleIntegerProperty getPopulacao() {
-		return populacao;
-	}
-	public void setPopulacao(SimpleIntegerProperty populacao) {
-		this.populacao = populacao;
-	}
-	public SimpleIntegerProperty getDomicilios() {
-		return domicilios;
-	}
-	public void setDomicilios(SimpleIntegerProperty domicilios) {
-		this.domicilios = domicilios;
-	}
-	public SimpleDoubleProperty getPib() {
-		return pib;
-	}
-	public void setPib(SimpleDoubleProperty pib) {
-		this.pib = pib;
-	}
-	public SimpleDoubleProperty getIdhGeral() {
-		return idhGeral;
-	}
-	public void setIdhGeral(SimpleDoubleProperty idhGeral) {
-		this.idhGeral = idhGeral;
-	}
-	public SimpleDoubleProperty getRendaMedia() {
-		return rendaMedia;
-	}
-	public void setRendaMedia(SimpleDoubleProperty rendaMedia) {
-		this.rendaMedia = rendaMedia;
-	}
-	public SimpleDoubleProperty getRendaNominal() {
-		return rendaNominal;
-	}
-	public void setRendaNominal(SimpleDoubleProperty rendaNominal) {
-		this.rendaNominal = rendaNominal;
-	}
-	public SimpleIntegerProperty getPeaDia() {
-		return peaDia;
-	}
-	public void setPeaDia(SimpleIntegerProperty peaDia) {
-		this.peaDia = peaDia;
-	}
-	public SimpleDoubleProperty getIdhEduc() {
-		return idhEduc;
-	}
-	public void setIdhEduc(SimpleDoubleProperty idhEduc) {
-		this.idhEduc = idhEduc;
-	}
-	public SimpleDoubleProperty getIdhLong() {
-		return idhLong;
-	}
-	public void setIdhLong(SimpleDoubleProperty idhLong) {
-		this.idhLong = idhLong;
-	}
+	
+
 	public Integer get_codIBGE() {
 		return _codIBGE;
 	}
@@ -253,7 +136,9 @@ public class Cidade {
 	public void set_idhLong(Double _idhLong) {
 		this._idhLong = _idhLong;
 	}
-
+	
+	
+	private Integer _codIBGE;
 	private String _nomeCidade;
 	private String _microRegiao;
 	private String _UF;

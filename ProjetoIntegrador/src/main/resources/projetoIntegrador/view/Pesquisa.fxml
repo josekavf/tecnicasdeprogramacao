@@ -10,10 +10,24 @@
     <children>
       <TableView fx:id="tabCity" prefHeight="200.0" prefWidth="200.0">
         <columns>
-          <TableColumn fx:id="tabCityArea" prefWidth="75.0" text="C1" />
+          <TableColumn fx:id="tabCityCod" prefWidth="75.0" text="Cído IBGE" />
+          <TableColumn fx:id="tabCityMunicipio" prefWidth="75.0" text="Município" />
+            <TableColumn fx:id="tabCityMicroregiao" prefWidth="75.0" text="Microregião" />
+            <TableColumn fx:id="tabCityUF" prefWidth="75.0" text="Estado" />
+            <TableColumn fx:id="tabCityRegiao" prefWidth="75.0" text="Região Geográfica" />
+            <TableColumn fx:id="tabCityArea" prefWidth="75.0" text="Área (km²)" />
+            <TableColumn fx:id="tabCityPopulacao" prefWidth="75.0" text="População" />
+            <TableColumn fx:id="tabCityDomicilio" prefWidth="75.0" text="Domicílios" />
+            <TableColumn fx:id="tabCityPIB" prefWidth="75.0" text="PIB total (R$ mil)" />
+            <TableColumn fx:id="tabCityIDH" prefWidth="75.0" text="IDH Geral" />
+            <TableColumn fx:id="tabCityRendaMedia" prefWidth="75.0" text="Renda Média" />
+            <TableColumn fx:id="tabCityRendaNominal" prefWidth="75.0" text="Renda Nominal" />
+            <TableColumn fx:id="tabCityPEA" prefWidth="75.0" text="PEA Dia" />
+            <TableColumn fx:id="tabCityIDHEduc" prefWidth="75.0" text="IDH Educação" />
+            <TableColumn fx:id="tabCityIDHLong" prefWidth="75.0" text="IDH Longividade" />
         </columns>
       </TableView>
-      <Button fx:id="secondaryButton1" onAction="#initialize" text="Carregar" />
+      <Button fx:id="secondaryButton1" onAction="#teste" text="Carregar" />
     </children>
     <padding>
         <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />

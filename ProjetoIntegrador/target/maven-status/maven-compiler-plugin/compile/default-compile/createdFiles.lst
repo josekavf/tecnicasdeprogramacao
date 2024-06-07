@@ -1,4 +1,5 @@
 projetoIntegrador\controller\CidadeController.class
+projetoIntegrador\view\PesquisaView$CidadeView.class
 projetoIntegrador\model\Cidade.class
 projetoIntegrador\model\repository\IArquivo.class
 projetoIntegrador\model\ClassifcIDH.class
