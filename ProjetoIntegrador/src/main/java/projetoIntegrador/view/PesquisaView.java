@@ -2,6 +2,7 @@ package projetoIntegrador.view;
 
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Optional;
 
 import org.apache.commons.codec.binary.StringUtils;
 
@@ -11,6 +12,11 @@ import javafx.beans.property.SimpleStringProperty;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
+import javafx.scene.control.Alert;
+import javafx.scene.control.Alert.AlertType;
+import javafx.scene.control.Button;
+import javafx.scene.control.ButtonBar.ButtonData;
+import javafx.scene.control.ButtonType;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
@@ -41,7 +47,7 @@ public class PesquisaView {
 				Double rendaNominal, Integer peaDia, Double idhEduc, Double idhLong) {
 
 			this.codIBGE = new SimpleIntegerProperty(codIBGE);
-			this.nomeCidade = new SimpleStringProperty(StringUtils.newStringUtf8(nomeCidade.getBytes()));
+			this.nomeCidade = new SimpleStringProperty(nomeCidade);
 			this.microRegiao = new SimpleStringProperty(StringUtils.newStringUtf8(microRegiao.getBytes()));
 			this.UF = new SimpleStringProperty(StringUtils.newStringUtf8(uF.getBytes()));
 			this.regiao = new SimpleStringProperty(StringUtils.newStringUtf8(regiao.getBytes()));
@@ -61,121 +67,121 @@ public class PesquisaView {
 			return codIBGE.get();
 		}
 
-		public void setCodIBGE(SimpleIntegerProperty codIBGE) {
-			this.codIBGE = codIBGE;
+		public void setCodIBGE(Integer codIBGE) {
+			this.codIBGE.set(codIBGE);
 		}
 
 		public String getNomeCidade() {
 			return StringUtils.newStringUtf8(nomeCidade.get().getBytes());
 		}
 
-		public void setNomeCidade(SimpleStringProperty nomeCidade) {
-			this.nomeCidade = nomeCidade;
+		public void setNomeCidade(String nomeCidade) {
+			this.nomeCidade.set(nomeCidade); 
 		}
 
 		public String getMicroRegiao() {
-			return StringUtils.newStringUtf8(microRegiao.get().getBytes());
+			return this.microRegiao.get();
 		}
 
-		public void setMicroRegiao(SimpleStringProperty microRegiao) {
-			this.microRegiao = microRegiao;
+		public void setMicroRegiao(String microRegiao) {
+			this.microRegiao.set(microRegiao);
 		}
 
 		public String getUF() {
-			return StringUtils.newStringUtf8(UF.get().getBytes());
+			return this.UF.get();
 		}
 
-		public void setUF(SimpleStringProperty uF) {
-			UF = uF;
+		public void setUF(String uF) {
+			this.UF.set(uF);
 		}
 
 		public String getRegiao() {
-			return StringUtils.newStringUtf8(regiao.get().getBytes());
+			return this.regiao.get();
 		}
 
-		public void setRegiao(SimpleStringProperty regiao) {
-			this.regiao = regiao;
+		public void setRegiao(String regiao) {
+			this.regiao.set(regiao);
 		}
 
 		public Double getArea() {
 			return area.get();
 		}
 
-		public void setArea(SimpleDoubleProperty area) {
-			this.area = area;
+		public void setArea(Double area) {
+			this.area.set(area);
 		}
 
 		public Integer getPopulacao() {
 			return populacao.get();
 		}
 
-		public void setPopulacao(SimpleIntegerProperty populacao) {
-			this.populacao = populacao;
+		public void setPopulacao(Integer populacao) {
+			this.populacao.set(populacao);
 		}
 
 		public Integer getDomicilios() {
 			return domicilios.get();
 		}
 
-		public void setDomicilios(SimpleIntegerProperty domicilios) {
-			this.domicilios = domicilios;
+		public void setDomicilios(Integer domicilios) {
+			this.domicilios.set(domicilios);
 		}
 
 		public Double getPib() {
 			return pib.get();
 		}
 
-		public void setPib(SimpleDoubleProperty pib) {
-			this.pib = pib;
+		public void setPib(Double pib) {
+			this.pib.set(pib);
 		}
 
 		public Double getIdhGeral() {
 			return idhGeral.get();
 		}
 
-		public void setIdhGeral(SimpleDoubleProperty idhGeral) {
-			this.idhGeral = idhGeral;
+		public void setIdhGeral(Double idhGeral) {
+			this.idhGeral.set(idhGeral);
 		}
 
 		public Double getRendaMedia() {
 			return rendaMedia.get();
 		}
 
-		public void setRendaMedia(SimpleDoubleProperty rendaMedia) {
-			this.rendaMedia = rendaMedia;
+		public void setRendaMedia(Double rendaMedia) {
+			this.rendaMedia.set(rendaMedia);
 		}
 
 		public Double getRendaNominal() {
 			return rendaNominal.get();
 		}
 
-		public void setRendaNominal(SimpleDoubleProperty rendaNominal) {
-			this.rendaNominal = rendaNominal;
+		public void setRendaNominal(Double rendaNominal) {
+			this.rendaNominal.set(rendaNominal);
 		}
 
 		public Integer getPeaDia() {
 			return peaDia.get();
 		}
 
-		public void setPeaDia(SimpleIntegerProperty peaDia) {
-			this.peaDia = peaDia;
+		public void setPeaDia(Integer peaDia) {
+			this.peaDia.set(peaDia);
 		}
 
 		public Double getIdhEduc() {
 			return idhEduc.get();
-			
+
 		}
 
-		public void setIdhEduc(SimpleDoubleProperty idhEduc) {
-			this.idhEduc = idhEduc;
+		public void setIdhEduc(Double idhEduc) {
+			this.idhEduc.set(idhEduc);
 		}
 
 		public Double getIdhLong() {
 			return idhLong.get();
 		}
 
-		public void setIdhLong(SimpleDoubleProperty idhLong) {
-			this.idhLong = idhLong;
+		public void setIdhLong(Double idhLong) {
+			this.idhLong.set(idhLong);
 		}
 	}
 
@@ -229,9 +235,41 @@ public class PesquisaView {
 
 	private ObservableList<CidadeView> obsCidades;
 
-	@FXML
-	private void switchToPrimary() throws IOException {
-		App.setRoot("LogIn");
+    @FXML
+    private Button btCarregar;
+
+    @FXML
+    private Button btEditar;
+
+    @FXML
+    private Button btEstatisticas;
+
+    @FXML
+    private Button btExportar;
+
+    @FXML
+    private Button btIncluir;
+
+    @FXML
+    private Button btRemover;
+
+    @FXML
+    private Button btSair;
+
+    @FXML
+    private Button btSalvar;
+	
+	private Integer codIBGESelecionado = 0;
+	
+	private boolean alertaSimNao(String msgTitulo, String msgAlerta) {
+		ButtonType sim = new ButtonType("Sim", ButtonData.OK_DONE);
+		ButtonType nao = new ButtonType("Não", ButtonData.CANCEL_CLOSE);
+		Alert alert = new Alert(AlertType.WARNING, msgAlerta, sim, nao);
+
+		alert.setTitle(msgTitulo);
+		Optional<ButtonType> result = alert.showAndWait();
+		
+		return result.orElse(nao) == sim;
 	}
 
 	@FXML
@@ -252,6 +290,14 @@ public class PesquisaView {
 		tabCityRendaMedia.setCellValueFactory(new PropertyValueFactory<>("rendaMedia"));
 		tabCityRendaNominal.setCellValueFactory(new PropertyValueFactory<>("rendaNominal"));
 		tabCityUF.setCellValueFactory(new PropertyValueFactory<>("UF"));
+
+		tabCity.getSelectionModel().selectedItemProperty()
+				.addListener((obsCidades, oldValue, newValue) -> selecionarCidadeTabCity(newValue));
+	}
+	
+	@FXML
+	private void sair() throws IOException {
+		App.setRoot("LogIn");
 	}
 
 	private void carregarview(ArrayList<CidadeView> cityView) {
@@ -260,16 +306,85 @@ public class PesquisaView {
 					a.get_regiao(), a.get_area(), a.get_populacao(), a.get_domicilios(), a.get_pib(), a.get_idhGeral(),
 					a.get_rendaMedia(), a.get_rendaNominal(), a.get_peaDia(), a.get_idhEduc(), a.get_idhLong()));
 		}
+		
+		btCarregar.setDisable(true);
+		btEditar.setDisable(false);
+		btEstatisticas.setDisable(false);
+		btExportar.setDisable(true);
+		btIncluir.setDisable(false);
+		btRemover.setDisable(false);
+		btSalvar.setDisable(true);
+		
 	}
 
 	@FXML
-	private void teste() {
+	private void carregarCidades() {
 		ArrayList<CidadeView> cidades_ = new ArrayList<>();
 		carregarview(cidades_);
 		obsCidades = FXCollections.observableArrayList(cidades_);
 		tabCity.setColumnResizePolicy(TableView.UNCONSTRAINED_RESIZE_POLICY);
 		tabCity.setItems(obsCidades);
 
+	}
+
+	private void selecionarCidadeTabCity(CidadeView cv) {
+		codIBGESelecionado = cv.getCodIBGE();
+	}
+
+	@FXML
+	public void removerCidade() {
+
+		int indiceSelecionado = -1;
+		for (CidadeView c : obsCidades) {
+			if (c.getCodIBGE().equals(codIBGESelecionado)) {
+				indiceSelecionado = obsCidades.indexOf(c); 
+			}
+		}
+		if (alertaSimNao("Atenção!", String.format("Deseja remover a cidade %s?",  obsCidades.get(indiceSelecionado).getNomeCidade() ))) {
+		    System.out.println(codIBGESelecionado);
+		    btSalvar.setDisable(false);
+		}
+	}
+	
+	@FXML
+	public void salvarAlteracoes() {
+		if (alertaSimNao("Salvar", "Deseja Salvar dados alteraros ?")) {
+			App.controle.salvarAlteracoes(obsCidades);
+			btSalvar.setDisable(true);
+			btExportar.setDisable(true);
+		}
+	}
+	
+	
+	@FXML
+	public void incluirCidade(){
+		//Implementar Inclusão
+		btSalvar.setDisable(false);
+	}
+	
+	@FXML
+	public void editarCidade() {
+		//Implementar Edição
+		btSalvar.setDisable(false);
+		
+	}
+	
+	@FXML
+	public void abrirEstatisticas() {
+		//Implementar Tela de Estatisticas.
+	}
+	
+	@FXML
+	public void exportarDados() {
+		App.controle.escreverArquivo();
+		btCarregar.setDisable(false);
+		btExportar.setDisable(true);
+		btCarregar.setDisable(true);
+		btEditar.setDisable(true);
+		btEstatisticas.setDisable(true);
+		btIncluir.setDisable(true);
+		btRemover.setDisable(true);
+		btSalvar.setDisable(true);
 	}
 
 }

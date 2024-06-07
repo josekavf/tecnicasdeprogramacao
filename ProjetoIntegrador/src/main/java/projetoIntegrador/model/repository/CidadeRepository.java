@@ -5,6 +5,8 @@ import java.io.File;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.nio.charset.Charset;
+import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -33,10 +35,12 @@ public class CidadeRepository implements IArquivo {
 		Integer peaDia = 0;
 		Double idhEduc = 0.0;
 		Double idhLong = 0.0;
-
-        
+		
+	
+		Charset charset = StandardCharsets.UTF_8;
+		
 		List<String[]> records = new ArrayList<>();
-		BufferedReader br = new BufferedReader(new FileReader("C:/Projeto Integrador/In/01.ProjetoIntegrador_BaseMunicipios_In.csv"));
+		BufferedReader br = new BufferedReader(new FileReader("C:/Projeto Integrador/In/01.ProjetoIntegrador_BaseMunicipios_In.csv",charset ));
 		    String line;
 		    while ((line = br.readLine()) != null) {
 		        String[] values = line.split(";");
@@ -47,7 +51,7 @@ public class CidadeRepository implements IArquivo {
 		for (String[] s : records) {
 			if (!cont.equals(0)) {
 			codIBGE = tratarInteiros(s[0]);
-			nomeCidade = StringUtils.newStringUtf8(s[1].getBytes()) ;
+			nomeCidade = (s[1]) ;
 			microRegiao = StringUtils.newStringUtf8(s[2].getBytes());
 			UF = StringUtils.newStringUtf8(s[3].getBytes());
 			regiao = StringUtils.newStringUtf8(s[4].getBytes());

@@ -4,11 +4,12 @@
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.VBox?>
 
-<VBox alignment="CENTER" prefHeight="359.0" prefWidth="635.0" spacing="20.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="projetoIntegrador.view.PesquisaView">
+<VBox alignment="CENTER" maxHeight="600.0" maxWidth="600.0" minHeight="600.0" minWidth="600.0" prefHeight="600" prefWidth="600" spacing="20.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="projetoIntegrador.view.PesquisaView">
     <children>
-      <TableView fx:id="tabCity" prefHeight="200.0" prefWidth="200.0">
+      <TableView fx:id="tabCity" prefHeight="600" prefWidth="540">
         <columns>
           <TableColumn fx:id="tabCityCod" prefWidth="75.0" text="Cído IBGE" />
           <TableColumn fx:id="tabCityMunicipio" prefWidth="75.0" text="Município" />
@@ -27,7 +28,18 @@
             <TableColumn fx:id="tabCityIDHLong" prefWidth="75.0" text="IDH Longividade" />
         </columns>
       </TableView>
-      <Button fx:id="secondaryButton1" onAction="#teste" text="Carregar" />
+      <AnchorPane prefHeight="53.0" prefWidth="560.0">
+         <children>
+            <Button fx:id="btCarregar" layoutX="7.0" layoutY="1.0" onAction="#carregarCidades" text="Carregar" />
+            <Button fx:id="btIncluir" disable="true" layoutX="72.0" layoutY="1.0" mnemonicParsing="false" onAction="#incluirCidade" text="Incluir" />
+            <Button fx:id="btEditar" disable="true" layoutX="124.0" layoutY="1.0" mnemonicParsing="false" onAction="#editarCidade" prefHeight="25.0" prefWidth="55.0" text="Editar" />
+            <Button fx:id="btEstatisticas" disable="true" layoutX="262.0" layoutY="1.0" mnemonicParsing="false" onAction="#abrirEstatisticas" text="Estatísticas" />
+            <Button fx:id="btRemover" disable="true" layoutX="192.0" layoutY="1.0" mnemonicParsing="false" onAction="#removerCidade" text="Remover" />
+            <Button fx:id="btSair" layoutX="512.0" layoutY="1.0" mnemonicParsing="false" onAction="#sair" text="Sair" />
+            <Button fx:id="btSalvar" disable="true" layoutX="351.0" layoutY="1.0" mnemonicParsing="false" onAction="#salvarAlteracoes" text="Salvar" />
+            <Button fx:id="btExportar" disable="true" layoutX="420.0" layoutY="1.0" mnemonicParsing="false" onAction="#exportarDados" text="Exportar" />
+         </children>
+      </AnchorPane>
     </children>
     <padding>
         <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
