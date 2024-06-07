@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.VBox?>
+
+<VBox alignment="CENTER" spacing="20.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="projetoIntegrador.view.LogInView">
+   <children>
+      <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../assets/ibge-logo.png" />
+         </image>
+      </ImageView>
+      <TextField fx:id="user" maxHeight="30.0" maxWidth="198.0" minHeight="30.0" minWidth="198.0" prefHeight="30.0" prefWidth="198.0" promptText="seuemail@dominio.com.br" />
+      <PasswordField fx:id="password" maxHeight="30.0" maxWidth="198.0" minHeight="30.0" minWidth="198.0" prefHeight="30.0" prefWidth="198.0" promptText="Senha" />
+      <Button fx:id="btnEntrar" maxHeight="30.0" maxWidth="198.0" minHeight="30.0" minWidth="198.0" onAction="#evtEntrarClick" prefHeight="30.0" prefWidth="198.0" text="Entrar" />
+      <Button fx:id="btnEsqSenha" layoutX="103.0" layoutY="196.0" onAction="#evtEsqueciSenhaClick" prefHeight="30.0" prefWidth="197.0" text="Esqueci a Senha" />
+   </children>
+   <padding>
+      <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+   </padding>
+</VBox>
