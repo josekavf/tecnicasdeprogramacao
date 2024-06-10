@@ -363,12 +363,14 @@ public class PesquisaView {
 	}
 	
 	@FXML
-	public void editarCidade() {
-		//Implementar Edição
+	public void editarCidade() throws IOException {
+		//Implementar Edição   
+                App.setRoot("Edit");
 		btSalvar.setDisable(false);
 		
 	}
 	
+        
 	@FXML
 	public void abrirEstatisticas() {
 		//Implementar Tela de Estatisticas.
