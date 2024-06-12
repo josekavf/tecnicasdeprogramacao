@@ -4,14 +4,27 @@
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.VBox?>
 
-<VBox alignment="CENTER" maxHeight="600.0" maxWidth="656.0" minHeight="600.0" minWidth="600.0" prefHeight="600" prefWidth="632.0" spacing="20.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="projetoIntegrador.view.PesquisaView">
+<VBox alignment="CENTER" maxHeight="600.0" maxWidth="656.0" minHeight="507.0" minWidth="600.0" prefHeight="507.0" prefWidth="632.0" spacing="20.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="projetoIntegrador.view.PesquisaView">
     <children>
-      <TableView fx:id="tabCity" prefHeight="600.0" prefWidth="618.0">
+      <AnchorPane prefHeight="137.0" prefWidth="592.0">
+         <children>
+            <ImageView fitHeight="63.0" fitWidth="250.0" layoutX="6.0" layoutY="22.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../assets/ibge-logo.png" />
+               </image>
+            </ImageView>
+            <TextField layoutY="110.0" prefHeight="26.0" prefWidth="214.0" promptText="Digite o código do municípeo" />
+         </children>
+      </AnchorPane>
+      <TableView fx:id="tabCity" layoutX="20.0" prefHeight="234.0" prefWidth="592.0">
         <columns>
-          <TableColumn fx:id="tabCityCod" prefWidth="75.0" text="Cído IBGE" />
+          <TableColumn fx:id="tabCityCod" prefWidth="75.0" text="Código IBGE" />
           <TableColumn fx:id="tabCityMunicipio" prefWidth="75.0" text="Município" />
             <TableColumn fx:id="tabCityMicroregiao" prefWidth="75.0" text="Microregião" />
             <TableColumn fx:id="tabCityUF" prefWidth="75.0" text="Estado" />
@@ -28,16 +41,16 @@
             <TableColumn fx:id="tabCityIDHLong" prefWidth="75.0" text="IDH Longividade" />
         </columns>
       </TableView>
-      <AnchorPane prefHeight="53.0" prefWidth="560.0">
+      <AnchorPane prefHeight="28.0" prefWidth="594.0">
          <children>
-            <Button fx:id="btCarregar" layoutX="1.0" layoutY="1.0" onAction="#carregarCidades" prefHeight="26.0" prefWidth="74.0" text="Carregar" />
-            <Button fx:id="btIncluir" disable="true" layoutX="75.0" layoutY="1.0" mnemonicParsing="false" onAction="#incluirCidade" prefHeight="26.0" prefWidth="74.0" text="Incluir" />
-            <Button fx:id="btEditar" disable="true" layoutX="149.0" layoutY="1.0" mnemonicParsing="false" onAction="#editarCidade" prefHeight="26.0" prefWidth="74.0" text="Editar" />
-            <Button fx:id="btEstatisticas" disable="true" layoutX="297.0" layoutY="1.0" mnemonicParsing="false" onAction="#abrirEstatisticas" text="Estatísticas" />
-            <Button fx:id="btRemover" disable="true" layoutX="223.0" layoutY="1.0" mnemonicParsing="false" onAction="#removerCidade" prefHeight="26.0" prefWidth="74.0" text="Remover" />
-            <Button fx:id="btSair" layoutX="519.0" layoutY="1.0" mnemonicParsing="false" onAction="#sair" prefHeight="26.0" prefWidth="74.0" text="Sair" />
-            <Button fx:id="btSalvar" disable="true" layoutX="371.0" layoutY="1.0" mnemonicParsing="false" onAction="#salvarAlteracoes" prefHeight="26.0" prefWidth="74.0" text="Salvar" />
-            <Button fx:id="btExportar" disable="true" layoutX="445.0" layoutY="1.0" mnemonicParsing="false" onAction="#exportarDados" prefHeight="26.0" prefWidth="74.0" text="Exportar" />
+            <Button fx:id="btCarregar" layoutX="1.0" layoutY="-1.0" onAction="#carregarCidades" prefHeight="26.0" prefWidth="74.0" text="Carregar" />
+            <Button fx:id="btIncluir" disable="true" layoutX="75.0" layoutY="-1.0" mnemonicParsing="false" onAction="#incluirCidade" prefHeight="26.0" prefWidth="74.0" text="Incluir" />
+            <Button fx:id="btEditar" disable="true" layoutX="149.0" layoutY="-1.0" mnemonicParsing="false" onAction="#editarCidade" prefHeight="26.0" prefWidth="74.0" text="Editar" />
+            <Button fx:id="btEstatisticas" disable="true" layoutX="297.0" layoutY="-1.0" mnemonicParsing="false" onAction="#abrirEstatisticas" text="Estatísticas" />
+            <Button fx:id="btRemover" disable="true" layoutX="223.0" layoutY="-1.0" mnemonicParsing="false" onAction="#removerCidade" prefHeight="26.0" prefWidth="74.0" text="Remover" />
+            <Button fx:id="btSair" layoutX="519.0" layoutY="-1.0" mnemonicParsing="false" onAction="#sair" prefHeight="26.0" prefWidth="74.0" text="Sair" />
+            <Button fx:id="btSalvar" disable="true" layoutX="371.0" layoutY="-1.0" mnemonicParsing="false" onAction="#salvarAlteracoes" prefHeight="26.0" prefWidth="74.0" text="Salvar" />
+            <Button fx:id="btExportar" disable="true" layoutX="445.0" layoutY="-1.0" mnemonicParsing="false" onAction="#exportarDados" prefHeight="26.0" prefWidth="74.0" text="Exportar" />
          </children>
       </AnchorPane>
     </children>

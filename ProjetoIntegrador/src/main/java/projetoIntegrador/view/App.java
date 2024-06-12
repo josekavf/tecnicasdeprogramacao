@@ -20,7 +20,7 @@ public class App extends Application {
     @Override
     public void start(Stage stage) throws IOException {
     	controle = new CidadeController();
-        scene = new Scene(loadFXML("LogIn"),632,600);
+        scene = new Scene(loadFXML("LogIn"),632,507);
         stage.setResizable(false);
         stage.setScene(scene);
         stage.show();

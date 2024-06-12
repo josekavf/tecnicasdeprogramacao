@@ -17,6 +17,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
+import projetoIntegrador.util.exception.Constraints;
 
 public class EditView {
 
@@ -79,6 +80,15 @@ public class EditView {
     public EditView() {
     }
 
+    public void initialize(){
+    //Constraints.setTextFieldDouble(tabCity); // Iremos utilizar o integer
+    
+    Constraints.setTextFieldInteger(tabCityCod); // Valida se é um numero inteiro
+
+    //Constraints.setTextFieldMaxLength(txtNumber1, 12); // Não iremos precisar definir o tamanho do campo
+   // Constraints.setTextFieldMaxLength(txtNumber2, 12);
+    }
+    
     @FXML
     private void sair() throws IOException {
         App.setRoot("Pesquisa");
