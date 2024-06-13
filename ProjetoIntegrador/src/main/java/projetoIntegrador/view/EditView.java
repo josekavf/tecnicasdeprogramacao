@@ -163,12 +163,12 @@ public class EditView {
         String nomeCidade = txCityMunicipio.getText();
         
         if (nomeCidade.isEmpty()) {
-            Constraints.alertaSimNao("Salvar Cidade", "O nome da cidade é obrigatório!");
+            Constraints.alertaOk("Salvar Cidade", "O nome da cidade é obrigatório!");
             return; // Não prossegue com a operação de salvar
         } else {
             for (Cidade c : App.controle.getCidades()) {
                 if (c.get_nomeCidade().equals(nomeCidade)) {
-                    Constraints.alertaSimNao("Salvar Cidade", "Já existe uma cidade com o mesmo nome!");
+                    Constraints.alertaOk("Salvar Cidade", "Já existe uma cidade com o mesmo nome!");
                     return;
                 }
             }

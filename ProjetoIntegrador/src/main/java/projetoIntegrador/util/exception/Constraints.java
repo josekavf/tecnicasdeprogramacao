@@ -59,12 +59,21 @@ public class Constraints {
     public static boolean alertaSimNao(String msgTitulo, String msgAlerta) {
 		ButtonType sim = new ButtonType("Sim", ButtonData.OK_DONE);
 		ButtonType nao = new ButtonType("Não", ButtonData.CANCEL_CLOSE);
-		Alert alert = new Alert(AlertType.WARNING, msgAlerta, sim, nao);
+		Alert alert = new Alert(AlertType.CONFIRMATION, msgAlerta, sim, nao);
 
 		alert.setTitle(msgTitulo);
 		Optional<ButtonType> result = alert.showAndWait();
 
 		return result.orElse(nao) == sim;
+	}
+    public static boolean alertaOk(String msgTitulo, String msgAlerta) {
+		ButtonType ok = new ButtonType("OK", ButtonData.OK_DONE);
+		//ButtonType nao = new ButtonType("Não", ButtonData.CANCEL_CLOSE);
+		Alert alert = new Alert(AlertType.WARNING, msgAlerta, ok);
+		alert.setTitle(msgTitulo);
+		Optional<ButtonType> result = alert.showAndWait();
+
+		return result.orElse(ok) == ok;
 	}
 
 }
