@@ -17,6 +17,7 @@ import javafx.scene.control.cell.PropertyValueFactory;
 import projetoIntegrador.model.Cidade;
 import projetoIntegrador.util.exception.Constraints;
 
+
 public class PesquisaView {
 
 	public class CidadeView {
