@@ -19,7 +19,7 @@
                   <Image url="@../assets/ibge-logo.png" />
                </image>
             </ImageView>
-            <TextField fx:id="txPesquisaCodIBGE" layoutY="110.0" onKeyPressed="#buscar" prefHeight="26.0" prefWidth="214.0" promptText="Digite o código do municípeo" />
+            <TextField fx:id="txPesquisaCodIBGE" layoutY="110.0" onKeyPressed="#keyPresstxPesqusa" prefHeight="26.0" prefWidth="214.0" promptText="Digite o código do municípeo" />
          </children>
       </AnchorPane>
       <TableView fx:id="tabCity" layoutX="20.0" prefHeight="234.0" prefWidth="592.0">

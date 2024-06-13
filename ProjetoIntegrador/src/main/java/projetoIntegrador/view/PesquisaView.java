@@ -284,6 +284,8 @@ public class PesquisaView {
 		
 		tabCity.setColumnResizePolicy(TableView.UNCONSTRAINED_RESIZE_POLICY);
 		
+		Constraints.setTextFieldInteger(txPesquisaCodIBGE);
+		
 		this.carregarCidades();
 	}
 
