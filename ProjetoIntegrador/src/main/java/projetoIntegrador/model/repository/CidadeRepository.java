@@ -58,10 +58,10 @@ public class CidadeRepository implements IArquivo {
 			area = tratarDouble(s[5]);
 			populacao = tratarInteiros(s[6]);
 			domicilios = tratarInteiros(s[7]);
-			pib = tratarDouble(s[8]) * 1000.00;
+			pib = tratarDouble(s[8]);
 			idhGeral = tratarDouble(s[9]);
 			rendaMedia = tratarDouble(s[10]);
-			rendaNominal = tratarDouble(s[11]);
+			rendaNominal = (tratarDouble(s[11])/1000.00);
 			peaDia = tratarInteiros(s[12]);
 			idhEduc = tratarDouble(s[13]);
 			idhLong = tratarDouble(s[14]);

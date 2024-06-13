@@ -2,11 +2,6 @@ package projetoIntegrador.model;
 
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
-
-import javafx.beans.property.SimpleDoubleProperty;
-import javafx.beans.property.SimpleIntegerProperty;
-import javafx.beans.property.SimpleStringProperty;
-
 public class Cidade {
 	
 	public Cidade(Integer codIBGE, String nomeCidade, String microRegiao, String uF, String regiao, Double area,

@@ -1,7 +1,13 @@
 package projetoIntegrador.util.exception;
 
 
+import java.util.Optional;
+
+import javafx.scene.control.Alert;
+import javafx.scene.control.ButtonType;
 import javafx.scene.control.TextField;
+import javafx.scene.control.Alert.AlertType;
+import javafx.scene.control.ButtonBar.ButtonData;
 
 /*
  * Copyright (C) 2024 Daniel Douglas <danieldouglas26@outlook.com>
@@ -49,5 +55,16 @@ public class Constraints {
             }
         });
     }
+    
+    public static boolean alertaSimNao(String msgTitulo, String msgAlerta) {
+		ButtonType sim = new ButtonType("Sim", ButtonData.OK_DONE);
+		ButtonType nao = new ButtonType("Não", ButtonData.CANCEL_CLOSE);
+		Alert alert = new Alert(AlertType.WARNING, msgAlerta, sim, nao);
+
+		alert.setTitle(msgTitulo);
+		Optional<ButtonType> result = alert.showAndWait();
+
+		return result.orElse(nao) == sim;
+	}
 
 }

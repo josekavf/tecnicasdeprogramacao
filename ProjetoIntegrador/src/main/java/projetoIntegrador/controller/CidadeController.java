@@ -11,6 +11,15 @@ import projetoIntegrador.view.PesquisaView.CidadeView;
 public class CidadeController {
 
 	private ArrayList<Cidade> cidades;
+	private Integer codCidadeSelecionada;
+
+	public Integer getCodCidadeSelecionada() {
+		return codCidadeSelecionada;
+	}
+
+	public void setCodCidadeSelecionada(Integer codCidadeSelecionada) {
+		this.codCidadeSelecionada = codCidadeSelecionada;
+	}
 
 	public ArrayList<Cidade> getCidades() {
 		return cidades;
