@@ -123,8 +123,8 @@ public class PesquisaView {
 			this.domicilios.set(domicilios);
 		}
 
-		public Double getPib() {
-			return pib.get();
+		public String getPib() {
+			return String.format("%.2f", pib.get());
 		}
 
 		public void setPib(Double pib) {
@@ -139,16 +139,16 @@ public class PesquisaView {
 			this.idhGeral.set(idhGeral);
 		}
 
-		public Double getRendaMedia() {
-			return rendaMedia.get();
+		public String getRendaMedia() {
+			return String.format("%.2f", rendaMedia.get());
 		}
 
 		public void setRendaMedia(Double rendaMedia) {
 			this.rendaMedia.set(rendaMedia);
 		}
 
-		public Double getRendaNominal() {
-			return rendaNominal.get();
+		public String getRendaNominal() {
+			return String.format("%.2f",rendaNominal.get());
 		}
 
 		public void setRendaNominal(Double rendaNominal) {
@@ -212,7 +212,7 @@ public class PesquisaView {
 	private TableColumn<CidadeView, Integer> tabCityPEA;
 
 	@FXML
-	private TableColumn<CidadeView, Double> tabCityPIB;
+	private TableColumn<CidadeView, String> tabCityPIB;
 
 	@FXML
 	private TableColumn<CidadeView, Integer> tabCityPopulacao;
@@ -221,10 +221,10 @@ public class PesquisaView {
 	private TableColumn<CidadeView, String> tabCityRegiao;
 
 	@FXML
-	private TableColumn<CidadeView, Double> tabCityRendaMedia;
+	private TableColumn<CidadeView, String> tabCityRendaMedia;
 
 	@FXML
-	private TableColumn<CidadeView, Double> tabCityRendaNominal;
+	private TableColumn<CidadeView, String> tabCityRendaNominal;
 
 	@FXML
 	private TableColumn<CidadeView, String> tabCityUF;
@@ -388,7 +388,7 @@ public class PesquisaView {
 	}
 
 	@FXML
-	public void exportarDados() {
+	public void exportarDados() throws IOException {
 		App.controle.escreverArquivo();
 		btCarregar.setDisable(false);
 		btExportar.setDisable(true);

@@ -8,7 +8,13 @@ import javafx.scene.control.ButtonType;
 import javafx.scene.control.TextField;
 import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.ButtonBar.ButtonData;
-
+import java.io.BufferedWriter;
+import java.io.File;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 /*
  * Copyright (C) 2024 Daniel Douglas <danieldouglas26@outlook.com>
  *
@@ -75,5 +81,37 @@ public class Constraints {
 
 		return result.orElse(ok) == ok;
 	}
+    
+    
+    	
+   public static void escreverLog(String message) throws IOException {
+    		
+    		Path path = Paths.get("C:/Projeto Integrador/In");
+    		
+    		if(!Files.exists(path)) {
+    			
+    			Files.createDirectory(path);
+    			
+    		}
+    		
+    		File log = new File("C:/Projeto Integrador/In/logExecucao.log");
+    		
+    		if(!log.exists()) {
+    			
+    			log.createNewFile();
+    		
+    		}
+    		
+    		FileWriter fw = new FileWriter(log, true);
+    		BufferedWriter bw = new BufferedWriter(fw);
+    		
+    		bw.write(message);
+    		bw.newLine();
 
+    		bw.close();
+    		fw.close();
+    		
+   }
+   
 }
+

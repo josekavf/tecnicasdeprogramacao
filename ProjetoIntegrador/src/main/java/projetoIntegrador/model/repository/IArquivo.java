@@ -8,6 +8,6 @@ import projetoIntegrador.model.Cidade;
 public interface IArquivo {
 	
 	public ArrayList<Cidade> lerArquivo() throws IOException;
-	public Boolean escreverArquivo(ArrayList<Cidade> cidades);
+	public Boolean escreverArquivo(ArrayList<Cidade> cidades) throws IOException;
 
 }

@@ -7,6 +7,9 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.nio.charset.Charset;
 import java.nio.charset.StandardCharsets;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -40,6 +43,15 @@ public class CidadeRepository implements IArquivo {
 		Charset charset = StandardCharsets.UTF_8;
 		
 		List<String[]> records = new ArrayList<>();
+		
+		Path path = Paths.get("C:/Projeto Integrador/In");
+		
+		if(!Files.exists(path)) {
+			
+			Files.createDirectory(path);
+			
+		}
+		
 		BufferedReader br = new BufferedReader(new FileReader("C:/Projeto Integrador/In/01.ProjetoIntegrador_BaseMunicipios_In.csv",charset ));
 		    String line;
 		    while ((line = br.readLine()) != null) {
@@ -92,8 +104,16 @@ public class CidadeRepository implements IArquivo {
 	}
 
 	@Override
-	public Boolean escreverArquivo(ArrayList<Cidade> cidades) {
+	public Boolean escreverArquivo(ArrayList<Cidade> cidades) throws IOException {
 	    
+		Path path = Paths.get("C:/Projeto Integrador/Out");
+		
+		if(!Files.exists(path)) {
+			
+			Files.createDirectory(path);
+			
+		}
+		
 		File file = new File("C:/Projeto Integrador/Out/01.ProjetoIntegrador_BaseMunicipios_Out.csv");
 		try {
 			ArrayList<String[]> linhas = new ArrayList<>();
