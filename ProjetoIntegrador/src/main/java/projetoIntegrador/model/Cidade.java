@@ -176,9 +176,9 @@ public class Cidade {
 	
 	public void setPibPerCapita() {
 		if (this._populacao.equals(0)) {
-			this.pibPerCapita = (Double) (this._pib/1.0);
+			this.pibPerCapita = (Double) ((this._pib*1000.00)/1.0);
 		}else {
-			this.pibPerCapita = (Double) (this._pib/this._populacao);
+			this.pibPerCapita = (Double) ((this._pib*1000.00)/this._populacao);
 		}
 		
 	}

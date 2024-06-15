@@ -50,7 +50,7 @@ public class RankingView {
     	txMaiorPibPerCapita.setText(String.format("R$ %.2f", App.controle.getMaiorPerCapita().getPibPerCapita()));
     	txMaiorRankingIDHEduc.setText(String.format("%dº", App.controle.getMaiorPerCapita().getRankIDHEduc()));
     	txMaiorRankingIDHGeral.setText(String.format("%dº", App.controle.getMaiorPerCapita().getRankIDHGeral()));
-    	txMaiorRankingIDHLong.setText(String.format("%.dº", App.controle.getMaiorPerCapita().getRankIDHLong()));
+    	txMaiorRankingIDHLong.setText(String.format("%dº", App.controle.getMaiorPerCapita().getRankIDHLong()));
     	
     	txMenorRankingCodIBGE.setText(App.controle.getMenorPerCapita().getCodIBGE().toString());
     	txMenorMunicipio.setText(App.controle.getMenorPerCapita().getMunicipio());

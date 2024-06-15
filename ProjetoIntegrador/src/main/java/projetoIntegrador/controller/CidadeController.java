@@ -78,7 +78,7 @@ public class CidadeController {
 	}
 	
 	private void carregarDadosEstatisticos() {
-		Double maiorPibPerCapito = 0.00, menorPibPerCapita = 0.00;
+		Double maiorPibPerCapito = 0.00, menorPibPerCapita = 10000000000.00;
 		Cidade menorPib = null, MaiorPib = null;
 		for (Cidade c: cidades) {
 			if (maiorPibPerCapito < c.getPibPerCapita()) {
