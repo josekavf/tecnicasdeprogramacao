@@ -238,7 +238,7 @@ public class PesquisaView {
 	private Button btEditar;
 
 	@FXML
-	private Button btEstatisticas;
+	private Button btRanking;
 
 	@FXML
 	private Button btExportar;
@@ -304,7 +304,7 @@ public class PesquisaView {
 
 		btCarregar.setDisable(true);
 		btEditar.setDisable(false);
-		btEstatisticas.setDisable(false);
+		btRanking.setDisable(false);
 		btExportar.setDisable(true);
 		btIncluir.setDisable(false);
 		btRemover.setDisable(false);
@@ -366,7 +366,8 @@ public class PesquisaView {
 	}
     
 	@FXML
-	public void abrirEstatisticas() {
+	public void abrirRanking() throws IOException {
+		App.setRoot("Ranking");
 		// Implementar Tela de Estatisticas.
 	}
 	
@@ -394,7 +395,7 @@ public class PesquisaView {
 		btExportar.setDisable(true);
 		btCarregar.setDisable(true);
 		btEditar.setDisable(true);
-		btEstatisticas.setDisable(true);
+		btRanking.setDisable(true);
 		btIncluir.setDisable(true);
 		btRemover.setDisable(true);
 		btSalvar.setDisable(true);

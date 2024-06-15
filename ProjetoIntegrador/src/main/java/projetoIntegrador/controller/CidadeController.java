@@ -85,11 +85,15 @@ public class CidadeController {
 				maiorPibPerCapito = c.getPibPerCapita();
 				MaiorPib = c;
 				maiorPerCapita.setCodIBGE(c.get_codIBGE());
+				maiorPerCapita.setMunicipio(c.get_nomeCidade());
+				maiorPerCapita.setPibPerCapita(c.getPibPerCapita());
 			}
 			if (menorPibPerCapita > c.getPibPerCapita()) {
 				menorPibPerCapita = c.getPibPerCapita();
 				menorPib = c;
 				menorPerCapita.setCodIBGE(c.get_codIBGE());
+				menorPerCapita.setMunicipio(c.get_nomeCidade());
+				menorPerCapita.setPibPerCapita(c.getPibPerCapita());
 			}	
 		}
 		Collections.sort(cidades, new CompararPorIDHGeral());

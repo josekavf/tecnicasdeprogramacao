@@ -46,7 +46,7 @@
             <Button fx:id="btCarregar" layoutX="1.0" layoutY="-1.0" onAction="#carregarCidades" prefHeight="26.0" prefWidth="74.0" text="Carregar" />
             <Button fx:id="btIncluir" disable="true" layoutX="75.0" layoutY="-1.0" mnemonicParsing="false" onAction="#incluirCidade" prefHeight="26.0" prefWidth="74.0" text="Incluir" />
             <Button fx:id="btEditar" disable="true" layoutX="149.0" layoutY="-1.0" mnemonicParsing="false" onAction="#editarCidade" prefHeight="26.0" prefWidth="74.0" text="Editar" />
-            <Button fx:id="btEstatisticas" disable="true" layoutX="297.0" layoutY="-1.0" mnemonicParsing="false" onAction="#abrirEstatisticas" text="Estatísticas" />
+            <Button fx:id="btRanking" disable="true" layoutX="297.0" layoutY="-1.0" mnemonicParsing="false" onAction="#abrirRanking" prefHeight="25.0" prefWidth="74.0" text="Ranking" />
             <Button fx:id="btRemover" disable="true" layoutX="223.0" layoutY="-1.0" mnemonicParsing="false" onAction="#removerCidade" prefHeight="26.0" prefWidth="74.0" text="Remover" />
             <Button fx:id="btSair" layoutX="519.0" layoutY="-1.0" mnemonicParsing="false" onAction="#sair" prefHeight="26.0" prefWidth="74.0" text="Sair" />
             <Button fx:id="btSalvar" disable="true" layoutX="371.0" layoutY="-1.0" mnemonicParsing="false" onAction="#salvarAlteracoes" prefHeight="26.0" prefWidth="74.0" text="Salvar" />
