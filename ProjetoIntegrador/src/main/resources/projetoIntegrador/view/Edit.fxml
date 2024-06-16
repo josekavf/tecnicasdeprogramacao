@@ -3,31 +3,58 @@
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="337.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="projetoIntegrador.view.EditView">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="507.0" prefWidth="632.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="projetoIntegrador.view.EditView">
    <children>
-      <Button fx:id="btSalvar" layoutX="331.0" layoutY="286.0" mnemonicParsing="false" onAction="#salvar" prefHeight="26.0" prefWidth="111.0" text="Salvar" />
-      <Button fx:id="btSair" layoutX="460.0" layoutY="286.0" mnemonicParsing="false" onAction="#sair" prefHeight="26.0" prefWidth="111.0" text="Sair" />
-      <TextField fx:id="txCityCod" layoutX="29.0" layoutY="46.0" promptText="Codigo IBGE" />
-      <TextField fx:id="txCityMunicipio" layoutX="228.0" layoutY="46.0" promptText="Município" />
-      <TextField fx:id="txCityMicroregiao" layoutX="422.0" layoutY="46.0" promptText="Microregião" />
-      <TextField fx:id="txCityUF" layoutX="28.0" layoutY="89.0" promptText="Estado" />
-      <TextField fx:id="txCityRegiao" layoutX="227.0" layoutY="89.0" promptText="Região Geográfica" />
-      <TextField fx:id="txCityArea" layoutX="421.0" layoutY="89.0" promptText="Área (km²)" />
-      <TextField fx:id="txCityPopulacao" layoutX="29.0" layoutY="137.0" promptText="População" />
-      <TextField fx:id="txCityDomicilio" layoutX="228.0" layoutY="137.0" promptText="Domicílios" />
-      <TextField fx:id="txCityPIB" layoutX="422.0" layoutY="137.0" promptText="PIB total (R$ mil)" />
-      <TextField fx:id="txCityIDH" layoutX="29.0" layoutY="186.0" promptText="IDH Geral" />
-      <TextField fx:id="txCityRendaMedia" layoutX="228.0" layoutY="186.0" promptText="Renda Média" />
-      <TextField fx:id="txCityRendaNominal" layoutX="422.0" layoutY="186.0" promptText="Renda Nominal" />
-      <TextField fx:id="txCityPEA" layoutX="28.0" layoutY="232.0" promptText="PEA Dia" />
-      <TextField fx:id="txCityIDHEduc" layoutX="227.0" layoutY="232.0" promptText="IDH Educação" />
-      <TextField fx:id="txCityIDHLong" layoutX="421.0" layoutY="232.0" promptText="IDH Longividade" />
-      <Label fx:id="lbCidade" layoutX="28.0" layoutY="7.0" prefHeight="26.0" prefWidth="142.0" text="Editar e inserir dados">
+      <Button fx:id="btSalvar" layoutX="331.0" layoutY="418.0" mnemonicParsing="false" onAction="#salvar" prefHeight="26.0" prefWidth="111.0" text="Salvar" />
+      <Button fx:id="btSair" layoutX="460.0" layoutY="418.0" mnemonicParsing="false" onAction="#sair" prefHeight="26.0" prefWidth="111.0" text="Sair" />
+      <Label layoutX="29.0" layoutY="130.0" text="Código IBGE" />
+      <TextField fx:id="txCityCod" layoutX="29.0" layoutY="148.0" promptText="Codigo IBGE" />
+      <TextField fx:id="txCityMunicipio" layoutX="228.0" layoutY="148.0" promptText="Município" />
+      <TextField fx:id="txCityMicroregiao" layoutX="422.0" layoutY="148.0" promptText="Microregião" />
+      <TextField fx:id="txCityUF" layoutX="28.0" layoutY="193.0" promptText="Estado" />
+      <TextField fx:id="txCityRegiao" layoutX="227.0" layoutY="193.0" promptText="Região Geográfica" />
+      <TextField fx:id="txCityArea" layoutX="421.0" layoutY="193.0" promptText="Área (km²)" />
+      <TextField fx:id="txCityPopulacao" layoutX="29.0" layoutY="241.0" promptText="População" />
+      <TextField fx:id="txCityDomicilio" layoutX="228.0" layoutY="241.0" promptText="Domicílios" />
+      <TextField fx:id="txCityPIB" layoutX="422.0" layoutY="241.0" promptText="PIB total (R$ mil)" />
+      <TextField fx:id="txCityIDH" layoutX="29.0" layoutY="289.0" promptText="IDH Geral" />
+      <TextField fx:id="txCityRendaMedia" layoutX="228.0" layoutY="289.0" promptText="Renda Média" />
+      <TextField fx:id="txCityRendaNominal" layoutX="422.0" layoutY="289.0" promptText="Renda Nominal" />
+      <TextField fx:id="txCityPEA" layoutX="28.0" layoutY="336.0" promptText="PEA Dia" />
+      <TextField fx:id="txCityIDHEduc" layoutX="227.0" layoutY="336.0" promptText="IDH Educação" />
+      <TextField fx:id="txCityIDHLong" layoutX="421.0" layoutY="336.0" promptText="IDH Longividade" />
+      <Label fx:id="lbCidade" layoutX="28.0" layoutY="102.0" prefHeight="26.0" prefWidth="142.0" text="Editar e inserir dados">
          <font>
             <Font name="System Bold" size="13.0" />
+         </font>
+      </Label>
+      <Label layoutX="229.0" layoutY="129.0" text="Município" />
+      <Label layoutX="422.0" layoutY="130.0" text="Microregião" />
+      <Label layoutX="29.0" layoutY="177.0" text="Estado" />
+      <Label layoutX="228.0" layoutY="177.0" text="Região Geográfica" />
+      <Label layoutX="422.0" layoutY="177.0" text="Área (km²)" />
+      <Label layoutX="422.0" layoutY="224.0" prefHeight="18.0" prefWidth="96.0" text="PIB total (R$ mil)" />
+      <Label layoutX="230.0" layoutY="225.0" text="Domicílios" />
+      <Label layoutX="31.0" layoutY="224.0" text="População" />
+      <Label layoutX="31.0" layoutY="272.0" text="IDH Geral" />
+      <Label layoutX="228.0" layoutY="274.0" text="Renda Média" />
+      <Label layoutX="422.0" layoutY="273.0" text="Renda Nominal" />
+      <Label layoutX="422.0" layoutY="320.0" text="IDH Longividade" />
+      <Label layoutX="229.0" layoutY="319.0" text="IDH Educação" />
+      <ImageView fitHeight="58.0" fitWidth="176.0" layoutX="22.0" layoutY="405.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../assets/censotech.png" />
+         </image>
+      </ImageView>
+      <Label layoutX="29.0" layoutY="320.0" text="PEA Dia" />
+      <Label alignment="CENTER" contentDisplay="CENTER" layoutY="4.0" prefHeight="60.0" prefWidth="632.0" text="Edição e inserção de dados">
+         <font>
+            <Font name="Arial Bold" size="24.0" />
          </font>
       </Label>
    </children>

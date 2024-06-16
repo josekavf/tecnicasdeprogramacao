@@ -10,9 +10,9 @@
 
 <VBox alignment="CENTER" spacing="20.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="projetoIntegrador.view.LogInView">
    <children>
-      <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="71.0" fitWidth="210.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@../assets/ibge-logo.png" />
+            <Image url="@../assets/censotech.png" />
          </image>
       </ImageView>
       <TextField fx:id="user" maxHeight="30.0" maxWidth="198.0" minHeight="30.0" minWidth="198.0" prefHeight="30.0" prefWidth="198.0" promptText="seuemail@dominio.com.br" />
