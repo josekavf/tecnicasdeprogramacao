@@ -61,8 +61,8 @@ public class CidadeController {
 
 	private Cidade salvarCidade(CidadeView city) {
 		return new Cidade(city.getCodIBGE(), city.getNomeCidade(), city.getMicroRegiao(), city.getUF(),
-				city.getRegiao(), city.getArea(), city.getPopulacao(), city.getDomicilios(), Double.parseDouble(city.getPib()),
-				city.getIdhGeral(), Double.parseDouble(city.getRendaMedia()), Double.parseDouble(city.getRendaNominal()), city.getPeaDia(), city.getIdhEduc(),
+				city.getRegiao(), city.getArea(), city.getPopulacao(), city.getDomicilios(), city.getPibDouble(),
+				city.getIdhGeral(), city.getRendaMediaDouble(), city.getRendaNominalDouble(), city.getPeaDia(), city.getIdhEduc(),
 				city.getIdhLong());
 	}
 

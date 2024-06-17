@@ -17,7 +17,6 @@ import javafx.scene.control.cell.PropertyValueFactory;
 import projetoIntegrador.model.Cidade;
 import projetoIntegrador.util.exception.Constraints;
 
-
 public class PesquisaView {
 
 	public class CidadeView {
@@ -124,7 +123,11 @@ public class PesquisaView {
 		}
 
 		public String getPib() {
-			return String.format("%.2f", pib.get());
+			return String.format("%.2f", this.pib.get());
+		}
+		
+		public Double getPibDouble(){
+			return this.pib.get();
 		}
 
 		public void setPib(Double pib) {
@@ -140,7 +143,11 @@ public class PesquisaView {
 		}
 
 		public String getRendaMedia() {
-			return String.format("%.2f", rendaMedia.get());
+			return String.format("%.2f", this.rendaMedia.get());
+		}
+		
+		public Double getRendaMediaDouble() {
+			return this.rendaMedia.get();
 		}
 
 		public void setRendaMedia(Double rendaMedia) {
@@ -148,7 +155,11 @@ public class PesquisaView {
 		}
 
 		public String getRendaNominal() {
-			return String.format("%.2f",rendaNominal.get());
+			return String.format("%.2f", this.rendaNominal.get());
+		}
+		
+		public Double getRendaNominalDouble() {
+			return  this.rendaNominal.get();
 		}
 
 		public void setRendaNominal(Double rendaNominal) {
@@ -254,12 +265,11 @@ public class PesquisaView {
 
 	@FXML
 	private Button btSalvar;
-	
-    @FXML
-    private TextField txPesquisaCodIBGE;
+
+	@FXML
+	private TextField txPesquisaCodIBGE;
 
 	private Integer codIBGESelecionado = 0;
-
 
 	@FXML
 	public void initialize() {
@@ -282,11 +292,11 @@ public class PesquisaView {
 
 		tabCity.getSelectionModel().selectedItemProperty()
 				.addListener((obsCidades, oldValue, newValue) -> selecionarCidadeTabCity(newValue));
-		
+
 		tabCity.setColumnResizePolicy(TableView.UNCONSTRAINED_RESIZE_POLICY);
-		
+
 		Constraints.setTextFieldInteger(txPesquisaCodIBGE);
-		
+
 		this.carregarCidades();
 	}
 
@@ -302,13 +312,14 @@ public class PesquisaView {
 					a.get_rendaMedia(), a.get_rendaNominal(), a.get_peaDia(), a.get_idhEduc(), a.get_idhLong()));
 		}
 
-		btCarregar.setDisable(true);
+		btCarregar.setDisable(false);
 		btEditar.setDisable(false);
 		btRanking.setDisable(false);
 		btExportar.setDisable(true);
 		btIncluir.setDisable(false);
 		btRemover.setDisable(false);
-		btSalvar.setDisable(true);
+		btSalvar.setDisable(false);
+		btExportar.setDisable(false);
 
 	}
 
@@ -322,7 +333,10 @@ public class PesquisaView {
 	}
 
 	private void selecionarCidadeTabCity(CidadeView cv) {
-		codIBGESelecionado = cv.getCodIBGE();
+		if (cv != null) {
+			codIBGESelecionado = cv.getCodIBGE();
+		}
+
 	}
 
 	@FXML
@@ -336,8 +350,9 @@ public class PesquisaView {
 		}
 		if (Constraints.alertaSimNao("Atenção!",
 				String.format("Deseja remover a cidade %s?", obsCidades.get(indiceSelecionado).getNomeCidade()))) {
-			System.out.println(codIBGESelecionado);
+			App.controle.getCidades().remove(indiceSelecionado);
 			btSalvar.setDisable(false);
+			this.carregarCidades();
 		}
 	}
 
@@ -345,8 +360,8 @@ public class PesquisaView {
 	public void salvarAlteracoes() {
 		if (Constraints.alertaSimNao("Salvar", "Deseja Salvar dados alteraros ?")) {
 			App.controle.salvarAlteracoes(obsCidades);
-			btSalvar.setDisable(true);
-			btExportar.setDisable(true);
+			Constraints.alertaOk("Confirmação", "Alterações salvas com sucesso!");
+			this.carregarCidades();
 		}
 	}
 
@@ -360,45 +375,42 @@ public class PesquisaView {
 	@FXML
 	public void editarCidade() throws IOException {
 		// Implementar Edição
-		App.controle.setCodCidadeSelecionada(codIBGESelecionado);
-		App.setRoot("Edit");
+		if (codIBGESelecionado.equals(0)) {
+			Constraints.alertaOk("Atenção", "Selecione um Município");
+		} else {
+			App.controle.setCodCidadeSelecionada(codIBGESelecionado);
+			App.setRoot("Edit");
+		}
 
 	}
-    
+
 	@FXML
 	public void abrirRanking() throws IOException {
 		App.setRoot("Ranking");
 		// Implementar Tela de Estatisticas.
 	}
-	
+
 	@FXML
-	public ObservableList<CidadeView> buscar(){
-		 ObservableList<CidadeView> listaPesquisada = FXCollections.observableArrayList();
-		 for (CidadeView c: obsCidades ) {
-			 if (c.getCodIBGE().toString().contains(txPesquisaCodIBGE.getText())) {
-				 listaPesquisada.add(c); 
-			 }
-		 }
+	public ObservableList<CidadeView> buscar() {
+		ObservableList<CidadeView> listaPesquisada = FXCollections.observableArrayList();
+		for (CidadeView c : obsCidades) {
+			if (c.getCodIBGE().toString().contains(txPesquisaCodIBGE.getText())) {
+				listaPesquisada.add(c);
+			}
+		}
 		return listaPesquisada;
 	}
-	
-	
+
 	@FXML
 	public void keyPresstxPesqusa() {
+		codIBGESelecionado = 0;
 		tabCity.setItems(buscar());
 	}
 
 	@FXML
 	public void exportarDados() throws IOException {
 		App.controle.escreverArquivo();
-		btCarregar.setDisable(false);
-		btExportar.setDisable(true);
-		btCarregar.setDisable(true);
-		btEditar.setDisable(true);
-		btRanking.setDisable(true);
-		btIncluir.setDisable(true);
-		btRemover.setDisable(true);
-		btSalvar.setDisable(true);
+		Constraints.alertaOk("Confirmação", "Arquivo salvo com sucesso!");
 	}
 
 }

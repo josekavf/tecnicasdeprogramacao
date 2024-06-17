@@ -185,6 +185,9 @@ public class EditView {
 				}
 			}
 		}
+		if (txCityArea.getText().isBlank() || txCityArea.getText().isEmpty()) {
+			txCityArea.setText("0.00");
+		}
 	}
 
 	@FXML
@@ -193,6 +196,7 @@ public class EditView {
 			if (App.controle.getCodCidadeSelecionada().equals(-1)) {
 				validarInclusaoCidade();
 				if (Constraints.alertaSimNao("Salvar Cidade", "Deseja Realmente salvar a nova cidade ?")) {
+					
 					App.controle.getCidades().add(new Cidade(Integer.parseInt(txCityCod.getText()),
 							txCityMunicipio.getText(), txCityMicroregiao.getText(), txCityUF.getText(),
 							txCityRegiao.getText(), Double.parseDouble(txCityArea.getText()),
@@ -230,6 +234,7 @@ public class EditView {
 			}
 		} catch (Exception e) {
 			Constraints.escreverLog(e.getMessage());
+			Constraints.alertaOk("Erro", "Erro ao salvar arquivo");
 		}
 
 	}
