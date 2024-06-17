@@ -185,8 +185,33 @@ public class EditView {
 				}
 			}
 		}
+                
 		if (txCityArea.getText().isBlank() || txCityArea.getText().isEmpty()) {
 			txCityArea.setText("0.00");
+		}if (txCityMicroregiao.getText().isBlank() || txCityMicroregiao.getText().isEmpty()) {
+			txCityMicroregiao.setText("0.00");
+		}if (txCityUF.getText().isBlank() || txCityUF.getText().isEmpty()) {
+			txCityUF.setText("0.00");
+		}if (txCityPopulacao.getText().isBlank() || txCityPopulacao.getText().isEmpty()) {  
+			txCityPopulacao.setText("0");
+		}if (txCityRegiao.getText().isBlank() || txCityRegiao.getText().isEmpty()) {
+			txCityRegiao.setText("0.00");
+		}if (txCityDomicilio.getText().isBlank() || txCityDomicilio.getText().isEmpty()) {
+			txCityDomicilio.setText("0");
+		}if (txCityPIB.getText().isBlank() || txCityPIB.getText().isEmpty()) {
+			txCityPIB.setText("0.00");
+		}if (txCityIDH.getText().isBlank() || txCityIDH.getText().isEmpty()) {
+			txCityIDH.setText("0.00");
+		}if (txCityRendaMedia.getText().isBlank() || txCityRendaMedia.getText().isEmpty()) {
+			txCityRendaMedia.setText("0.00");
+		}if (txCityRendaNominal.getText().isBlank() || txCityRendaNominal.getText().isEmpty()) {
+			txCityRendaNominal.setText("0.00");
+		}if (txCityPEA.getText().isBlank() || txCityPEA.getText().isEmpty()) {
+			txCityPEA.setText("0");
+		}if (txCityIDHEduc.getText().isBlank() || txCityIDHEduc.getText().isEmpty()) {
+			txCityIDHEduc.setText("0.00");
+		}if (txCityIDHLong.getText().isBlank() || txCityIDHLong.getText().isEmpty()) {
+			txCityIDHLong.setText("0.00");
 		}
 	}
 
@@ -234,7 +259,8 @@ public class EditView {
 			}
 		} catch (Exception e) {
 			Constraints.escreverLog(e.getMessage());
-			Constraints.alertaOk("Erro", "Erro ao salvar arquivo");
+			//Constraints.alertaOk("Erro", "Erro ao salvar arquivo");
+			Constraints.alertaOk("Erro", e.getMessage() );
 		}
 
 	}
